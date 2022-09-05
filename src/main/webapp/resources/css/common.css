@@ -1,0 +1,39 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	width: 100%;
+}
+
+.Header, .content, .Footer{
+	width: 100%;
+	float: left;
+}
+
+.Header, .Footer{
+	height: 10em;
+}
+
+.SideBar{
+	width: 10%;
+	min-height:280px;
+	background-color: #FF8FB1;
+	float: left;
+}
+
+.page_content{
+	width: 90%;
+	min-height:280px;
+	background-color: #B270A2;
+	float: left;
+}
+
+.Header{
+	background-color: #FCE2DB;
+}
+
+.Footer{
+	background-color: #7A4495;
+}
