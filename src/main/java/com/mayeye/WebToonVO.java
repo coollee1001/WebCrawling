@@ -11,6 +11,7 @@ public class WebToonVO implements Comparator<WebToonVO>{
 	private String week;
 	private String title;
 	private String link;
+	private String imagesrc;
 	
 	@Override
 	public int compare(WebToonVO o1, WebToonVO o2) {
@@ -22,7 +23,7 @@ public class WebToonVO implements Comparator<WebToonVO>{
 
 	@Override
 	public String toString() {
-		return "WebToonVO [week=" + week + ", title=" + title + ", link=" + link + "]";
+		return "WebToonVO [week=" + week + ", title=" + title + ", link=" + link + ", imagesrc=" + imagesrc + "]";
 	}
 	
 }

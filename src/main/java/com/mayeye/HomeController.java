@@ -37,15 +37,17 @@ public class HomeController {
 		for(String[] week : WEEK_INDEX) {
 			String address = "https://comic.naver.com/webtoon/weekdayList?week=" + week[0];
 			Document rawData = Jsoup.connect(address).timeout(5000).get();
-			Elements links = rawData.select("ul.img_list dl dt a");			
+			Elements links = rawData.select("ul.img_list li div.thumb a");			
 			
 			for(Element link : links) {
 				WebToonVO webVO = new WebToonVO();	
 				log.info("link : {}", link.attr("href"));
 				log.info("title : {}", link.attr("title"));
+				log.info("image : {}", link.select("img").attr("src"));
 				webVO.setWeek(week[1]);
 				webVO.setTitle(link.attr("title"));
 				webVO.setLink("https://comic.naver.com"+link.attr("href"));
+				webVO.setImagesrc(link.select("img").attr("src"));
 				list.add(webVO);
 			}
 		}

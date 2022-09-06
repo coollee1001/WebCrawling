@@ -18,10 +18,11 @@
 			<c:if test="${map.week eq obj}">
 				<tr>
 					<td>${fn:substring(map.week, 0, fn:indexOf(map.week,'웹툰'))}<br>웹툰</td>
-					<td><a href="${map.link}" target="_blank">${map.title}</a></td>
+					<td><a href="${map.link}" target="_blank"><img src="${map.imagesrc}" alt="${map.title}"></a><br>
+					<label>${map.title}</label></td>
 				</tr>
 			</c:if>
-		</c:forEach>	
+		</c:forEach>
 	</table>
 	</c:forEach>
 </body>
