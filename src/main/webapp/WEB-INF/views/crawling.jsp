@@ -9,22 +9,39 @@
 </head>
 <body>
 	<c:forEach items="${week_index}" var="obj" varStatus="status">
-	<table style="float:left; width:${100/fn:length(week_index)}%; font-size:60%">
+	<table>
 		<tr>
-			<th>요일</th>
+			<th class="weekend">요일</th>
 			<th>제목</th>
 		</tr>
-		
 		<c:forEach items="${map}" var="map">
 			<c:if test="${map.week eq obj}">
 				<tr>
-					<td>${map.week}</td>
+					<td>${fn:substring(map.week, 0, fn:indexOf(map.week,'웹툰'))}<br>웹툰</td>
 					<td><a href="${map.link}" target="_blank">${map.title}</a></td>
 				</tr>
 			</c:if>
 		</c:forEach>	
 	</table>
 	</c:forEach>
-
 </body>
 </html>
+<style>
+	table {
+		float:left;
+		width:${100/fn:length(week_index)-0.2}%;
+		font-size::${100-(100/fn:length(week_index))}%;
+		border-top:1px solid #444444;
+		border-collapse:collaspe;
+	}
+	.weekend{
+		width:${100/(fn:length(week_index)-1)*2.5}%;
+	}
+	th {
+		border-bottom:1px solid #444444;
+		padding:10px;
+	}
+	td {
+		padding:7px;
+	}
+</style>
