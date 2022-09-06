@@ -2,7 +2,6 @@ package com.mayeye;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -57,7 +56,6 @@ public class HomeController {
 		}
 		// 제목순으로 정렬
 		Collections.sort(list, new WebToonVO());
-		
 		
 		model.addAttribute("map", list);
 		model.addAttribute("week_index", map);

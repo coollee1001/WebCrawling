@@ -12,7 +12,6 @@ public class WebToonVO implements Comparator<WebToonVO>{
 	private String title;
 	private String link;
 	
-	
 	@Override
 	public int compare(WebToonVO o1, WebToonVO o2) {
 		// TODO Auto-generated method stub
@@ -21,12 +20,9 @@ public class WebToonVO implements Comparator<WebToonVO>{
 		return tempData1.compareTo(tempData2);
 	}
 
-
 	@Override
 	public String toString() {
 		return "WebToonVO [week=" + week + ", title=" + title + ", link=" + link + "]";
 	}
-	
-	
 	
 }
